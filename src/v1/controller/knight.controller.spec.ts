@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { KnightController } from './knight.controller';
 
-describe('AppController', () => {
+describe(KnightController.name, () => {
   let controller: KnightController;
 
   beforeEach(async () => {
@@ -13,14 +13,12 @@ describe('AppController', () => {
     controller = app.get<KnightController>(KnightController);
   });
 
-  describe('root', () => {
-    it('should return list of knights', () => {
-      //arrange
+  it('should return list of knights', () => {
+    //arrange
 
-      //act
-      const act = controller.list();
-      //assert
-      expect(act).toContain('lista de knight');
-    });
+    //act
+    const act = controller.list();
+    //assert
+    expect(act).toContain('lista de knight');
   });
 });
